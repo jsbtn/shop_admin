@@ -133,242 +133,152 @@ export const asyncRouterMap = [
         component: () => import('@/views/magerShop/shopClass'),
         name: 'shopClass',
         meta: { title: '商品分类', noCache: true }
+      },
+      {
+        path: 'shopSend',
+        component: () => import('@/views/magerShop/shopSend'),
+        name: 'shopSend',
+        meta: { title: '发布商品', noCache: true }, hidden: true
       }
     ]
   },
   {
-    path: '/permission',
+    path: '/magerEvaluate',
     component: Layout,
-    redirect: '/permission/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/magerEvaluate/index'),
+        name: '评价管理',
+        meta: { title: '评价管理', icon: 'tab' }
+      }
+    ]
+  },
+
+  {
+    path: '/magerVip',
+    component: Layout,
+    // redirect: 'noredirect',
+    name: 'magerVip',
     alwaysShow: true, // will always show the root menu
     meta: {
-      title: 'permission',
-      icon: 'lock',
-      roles: ['admin', 'editor'] // you can set roles in root nav
+      title: '会员管理', icon: 'order', noCache: true
     },
     children: [
       {
-        path: 'page',
-        component: () => import('@/views/permission/page'),
-        name: 'PagePermission',
-        meta: {
-          title: 'pagePermission',
-          roles: ['admin'] // or you can only set roles in sub nav
-        }
+        path: 'vipList',
+        component: () => import('@/views/magerVip/vipList'),
+        name: 'vipList',
+        meta: { title: '会员列表', noCache: true }
       },
       {
-        path: 'directive',
-        component: () => import('@/views/permission/directive'),
-        name: 'DirectivePermission',
-        meta: {
-          title: 'directivePermission'
-          // if do not set roles, means: this page does not require permission
-        }
+        path: 'vipGrade',
+        component: () => import('@/views/magerVip/vipGrade'),
+        name: 'vipGrade',
+        meta: { title: '会员等级', noCache: true }
       }
     ]
   },
-
   {
-    path: '/icon',
+    path: '/magerNotice',
     component: Layout,
     children: [
       {
         path: 'index',
-        component: () => import('@/views/svg-icons/index'),
-        name: 'Icons',
-        meta: { title: 'icons', icon: 'icon', noCache: true }
+        component: () => import('@/views/magerNotice/index'),
+        name: '公告管理',
+        meta: { title: '公告管理', icon: 'tab' }
       }
     ]
   },
-
-  /** When your routing table is too long, you can split it into small modules**/
-  componentsRouter,
-  chartsRouter,
-  nestedRouter,
-  tableRouter,
-
   {
-    path: '/example',
+    path: '/magerSale',
     component: Layout,
-    redirect: '/example/list',
-    name: 'Example',
+    // redirect: 'noredirect',
+    name: 'magerSale',
+    alwaysShow: true, // will always show the root menu
     meta: {
-      title: 'example',
-      icon: 'example'
+      title: '分销管理', icon: 'order', noCache: true
     },
     children: [
       {
-        path: 'create',
-        component: () => import('@/views/example/create'),
-        name: 'CreateArticle',
-        meta: { title: 'createArticle', icon: 'edit' }
+        path: 'agent',
+        component: () => import('@/views/magerSale/agent'),
+        name: 'agent',
+        meta: { title: '代理商管理', noCache: true }
       },
       {
-        path: 'edit/:id(\\d+)',
-        component: () => import('@/views/example/edit'),
-        name: 'EditArticle',
-        meta: { title: 'editArticle', noCache: true },
-        hidden: true
+        path: 'putForward',
+        component: () => import('@/views/magerSale/putForward'),
+        name: 'putForward',
+        meta: { title: '提现管理', noCache: true }
       },
       {
-        path: 'list',
-        component: () => import('@/views/example/list'),
-        name: 'ArticleList',
-        meta: { title: 'articleList', icon: 'list' }
+        path: 'setting',
+        component: () => import('@/views/magerSale/setting'),
+        name: 'setting',
+        meta: { title: '分销设置', noCache: true }
+      },
+      //
+      {
+        path: 'sendAgent',
+        component: () => import('@/views/magerSale/sendAgent'),
+        name: 'sendAgent',
+        hidden: true,
+        meta: { title: '新增代理商',noCache: true  }
+      },
+      {
+        path: 'agentDetail',
+        component: () => import('@/views/magerSale/agentDetail'),
+        name: 'agentDetail',
+        hidden: true,
+        meta: { title: '代理商详情',noCache: true  }
       }
     ]
   },
 
   {
-    path: '/tab',
+    path: '/opinion',
     component: Layout,
     children: [
       {
         path: 'index',
-        component: () => import('@/views/tab/index'),
-        name: 'Tab',
-        meta: { title: 'tab', icon: 'tab' }
+        component: () => import('@/views/opinion/index'),
+        name: '意见反馈',
+        meta: { title: '意见反馈', icon: 'tab' }
       }
     ]
   },
-
   {
-    path: '/error',
+    path: '/setting',
     component: Layout,
-    redirect: 'noredirect',
-    name: 'ErrorPages',
+    // redirect: 'noredirect',
+    name: 'setting',
+    alwaysShow: true, // will always show the root menu
     meta: {
-      title: 'errorPages',
-      icon: '404'
+      title: '系统设置', icon: 'order', noCache: true
     },
     children: [
       {
-        path: '401',
-        component: () => import('@/views/errorPage/401'),
-        name: 'Page401',
-        meta: { title: 'page401', noCache: true }
+        path: 'integral',
+        component: () => import('@/views/setting/integral'),
+        name: 'integral',
+        meta: { title: '积分管理', noCache: true }
       },
       {
-        path: '404',
-        component: () => import('@/views/errorPage/404'),
-        name: 'Page404',
-        meta: { title: 'page404', noCache: true }
-      }
-    ]
-  },
-
-  {
-    path: '/error-log',
-    component: Layout,
-    redirect: 'noredirect',
-    children: [
-      {
-        path: 'log',
-        component: () => import('@/views/errorLog/index'),
-        name: 'ErrorLog',
-        meta: { title: 'errorLog', icon: 'bug' }
-      }
-    ]
-  },
-
-  {
-    path: '/excel',
-    component: Layout,
-    redirect: '/excel/export-excel',
-    name: 'Excel',
-    meta: {
-      title: 'excel',
-      icon: 'excel'
-    },
-    children: [
-      {
-        path: 'export-excel',
-        component: () => import('@/views/excel/exportExcel'),
-        name: 'ExportExcel',
-        meta: { title: 'exportExcel' }
+        path: 'problem',
+        component: () => import('@/views/setting/problem'),
+        name: 'problem',
+        meta: { title: '问题管理', noCache: true }
       },
       {
-        path: 'export-selected-excel',
-        component: () => import('@/views/excel/selectExcel'),
-        name: 'SelectExcel',
-        meta: { title: 'selectExcel' }
-      },
-      {
-        path: 'upload-excel',
-        component: () => import('@/views/excel/uploadExcel'),
-        name: 'UploadExcel',
-        meta: { title: 'uploadExcel' }
+        path: 'problemadd',
+        component: () => import('@/views/setting/problemadd'),
+        name: 'problem',
+        hidden: true,
+        meta: { title: '新增管理', noCache: true }
       }
     ]
   },
-
-  {
-    path: '/zip',
-    component: Layout,
-    redirect: '/zip/download',
-    alwaysShow: true,
-    meta: { title: 'zip', icon: 'zip' },
-    children: [
-      {
-        path: 'download',
-        component: () => import('@/views/zip/index'),
-        name: 'ExportZip',
-        meta: { title: 'exportZip' }
-      }
-    ]
-  },
-
-  {
-    path: '/theme',
-    component: Layout,
-    redirect: 'noredirect',
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/theme/index'),
-        name: 'Theme',
-        meta: { title: 'theme', icon: 'theme' }
-      }
-    ]
-  },
-
-  {
-    path: '/clipboard',
-    component: Layout,
-    redirect: 'noredirect',
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/clipboard/index'),
-        name: 'ClipboardDemo',
-        meta: { title: 'clipboardDemo', icon: 'clipboard' }
-      }
-    ]
-  },
-
-  {
-    path: '/i18n',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/i18n-demo/index'),
-        name: 'I18n',
-        meta: { title: 'i18n', icon: 'international' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://github.com/PanJiaChen/vue-element-admin',
-        meta: { title: 'externalLink', icon: 'link' }
-      }
-    ]
-  },
-
   { path: '*', redirect: '/404', hidden: true }
 ]

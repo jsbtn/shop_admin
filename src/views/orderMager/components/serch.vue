@@ -88,8 +88,8 @@
             </el-col>   
         </el-row>
         <el-row>
-            <el-button style="margin-left: 50px;" @click="serch" type="primary">搜索</el-button>
-            <el-button style="margin-left: 10px;" @click="resetForm('temp')" type="primary">重置</el-button>
+            <el-button class="bthseach" style="margin-left: 50px;" @click="serch" type="primary">搜索</el-button>
+            <el-button class="bthseach" style="margin-left: 10px;" @click="resetForm('temp')" type="primary">重置</el-button>
         </el-row>
       </el-form>
     </div>

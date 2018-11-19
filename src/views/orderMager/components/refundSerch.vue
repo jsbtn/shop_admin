@@ -69,8 +69,8 @@
         </el-col>
       </el-row>
       <el-row>
-        <el-button style="margin-left: 50px;" type="primary" @click="serch">搜索</el-button>
-        <el-button style="margin-left: 10px;" type="primary" @click="resetForm('temp')">重置</el-button>
+        <el-button class="bthseach" style="margin-left: 50px;" type="primary" @click="serch">搜索</el-button>
+        <el-button class="bthseach" style="margin-left: 10px;" type="primary" @click="resetForm('temp')">重置</el-button>
       </el-row>
     </el-form>
   </div>

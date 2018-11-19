@@ -3,7 +3,7 @@ const getShopList = function() {
     {
       imgurl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1234021626,1304133738&fm=26&gp=0.jpg',
       shopname: '小米笔记本',
-      shopNumCode: 'G20181011090019790793',
+      shopNumCode: '单独购买+官方拼团',
       index: 1,
       shopPrice: '6099',
       stock: 100,
@@ -12,11 +12,10 @@ const getShopList = function() {
       sendtime: '2018-10-04 15:00:20',
       browse: 500,
       state: '在售'
-    },
- 		{
+    }, {
       imgurl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1234021626,1304133738&fm=26&gp=0.jpg',
       shopname: '小米笔记本',
-      shopNumCode: 'G20181011090019790793',
+      shopNumCode: '单独购买+自由拼团',
       index: 1,
       shopPrice: '6099',
       stock: 100,
@@ -25,11 +24,10 @@ const getShopList = function() {
       sendtime: '2018-10-04 15:00:20',
       browse: 500,
       state: '在售'
-    },
- 		{
+    }, {
       imgurl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1234021626,1304133738&fm=26&gp=0.jpg',
       shopname: '小米笔记本',
-      shopNumCode: 'G20181011090019790793',
+      shopNumCode: '单独购买',
       index: 1,
       shopPrice: '6099',
       stock: 100,
@@ -38,11 +36,10 @@ const getShopList = function() {
       sendtime: '2018-10-04 15:00:20',
       browse: 500,
       state: '在售'
-    },
- 		{
+    }, {
       imgurl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1234021626,1304133738&fm=26&gp=0.jpg',
       shopname: '小米笔记本',
-      shopNumCode: 'G20181011090019790793',
+      shopNumCode: '官方拼团',
       index: 1,
       shopPrice: '6099',
       stock: 100,
@@ -51,8 +48,7 @@ const getShopList = function() {
       sendtime: '2018-10-04 15:00:20',
       browse: 500,
       state: '在售'
-    }
-  ]
+    }]
   return arr
 }
 export {
